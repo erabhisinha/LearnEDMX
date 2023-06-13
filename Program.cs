@@ -11,7 +11,11 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             DummyEntities dummyEntities = new DummyEntities();
-            dummyEntities.Students.Add(new Student { LastName="Sinha", FirstMidName = "Kr", EnrollmentDate = DateTime.Today});
+            var newItem = new Items { ItemName = "Dummy Item" };
+            dummyEntities.Items.Add(newItem);
+            dummyEntities.SaveChanges();
+            var allItems = dummyEntities.Items.Select(x => x);
+            dummyEntities.Students.Add(new Student { LastName = "Sinha1", FirstMidName = "Kr", EnrollmentDate = DateTime.Today });
             dummyEntities.SaveChanges();
         }
     }

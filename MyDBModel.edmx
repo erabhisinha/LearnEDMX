@@ -32,6 +32,13 @@
           <Property Name="FirstMidName" Type="nvarchar(max)" />
           <Property Name="EnrollmentDate" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
+		  <EntityType Name="Items">
+			  <Key>
+				  <PropertyRef Name="ID" />
+			  </Key>
+			  <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+			  <Property Name="ItemName" Type="nvarchar(max)" />
+		  </EntityType>
         <Association Name="FK_Enrollment_Student_StudentID">
           <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
           <End Role="Enrollment" Type="Self.Enrollment" Multiplicity="*" />
@@ -60,6 +67,7 @@
           <EntitySet Name="Enrollment" EntityType="Self.Enrollment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+			<EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Enrollment_Student_StudentID" Association="Self.FK_Enrollment_Student_StudentID">
             <End Role="Student" EntitySet="Student" />
             <End Role="Enrollment" EntitySet="Enrollment" />
@@ -141,7 +149,15 @@
             <End Role="Student" EntitySet="Students" />
             <End Role="Report" EntitySet="Reports" />
           </AssociationSet>
+          <EntitySet Name="Items" EntityType="DummyModel.Items" />
         </EntityContainer>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -175,6 +191,14 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstMidName" ColumnName="FirstMidName" />
                 <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+		 <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="DummyModel.Items">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="DummyModel.Student" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <AssociationConnector Association="DummyModel.FK_Enrollment_Student_StudentID" ManuallyRouted="false" />
         <AssociationConnector Association="DummyModel.FK_Report_Student_StudentID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DummyModel.Items" Width="1.5" PointX="6.625" PointY="2.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -28,5 +28,6 @@ namespace ConsoleApp2
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Items> Items { get; set; }
     }
 }

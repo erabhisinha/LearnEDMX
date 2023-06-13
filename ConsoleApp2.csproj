@@ -53,6 +53,9 @@
     <Compile Include="Enrollment.cs">
       <DependentUpon>MyDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Items.cs">
+      <DependentUpon>MyDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +92,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DBScript.sql" />
     <Content Include="MyDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MyDBModel.Context.cs</LastGenOutput>
